@@ -215,3 +215,21 @@ test('it should update chart if data structure changes', function(assert) {
   chart = component.get('chart');
   assert.equal(chart.segments[3].value, 20);
 });
+
+test('it should update chart styling dynamically', function(assert) {
+  var component = this.subject({
+    type: 'Line',
+    data: testData.get('lineData')
+  });
+
+  this.render();
+  var chart = component.get('chart');
+  assert.equal(chart.datasets[0].fillColor, 'rgba(220,220,220,0.2)');
+
+  // Update Data
+  testData.set('fillColor', 'rgba(100,220,220,0.2)');
+  component.set('data', testData.get('lineData'));
+
+  chart = component.get('chart');
+  assert.equal(chart.datasets[0].fillColor, 'rgba(100,220,220,0.2)');
+});
