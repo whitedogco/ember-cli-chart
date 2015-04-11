@@ -31,8 +31,20 @@ export default Ember.Object.extend({
 
           if(typeof dataSet.bars !== 'undefined') {
             chart.datasets[i].bars[j].value = item;
+            chart.datasets[i].bars[j].fillColor = dataset.fillColor;
+            chart.datasets[i].bars[j].strokeColor = dataset.strokeColor;
+            chart.datasets[i].bars[j].pointColor = dataset.pointColor;
+            chart.datasets[i].bars[j].pointStrokeColor = dataset.pointStrokeColor;
+            chart.datasets[i].bars[j].pointHighlightFill = dataset.pointHighlightFill;
+            chart.datasets[i].bars[j].pointHighlightStroke = dataset.pointHighlightStroke;
           } else {
             chart.datasets[i].points[j].value = item;
+            chart.datasets[i].points[j].fillColor = dataset.fillColor;
+            chart.datasets[i].points[j].strokeColor = dataset.strokeColor;
+            chart.datasets[i].points[j].pointColor = dataset.pointColor;
+            chart.datasets[i].points[j].pointStrokeColor = dataset.pointStrokeColor;
+            chart.datasets[i].points[j].pointHighlightFill = dataset.pointHighlightFill;
+            chart.datasets[i].points[j].pointHighlightStroke = dataset.pointHighlightStroke;
           }
         }
       });
