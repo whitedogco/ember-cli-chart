@@ -14,6 +14,14 @@ export default Ember.Object.extend({
     var chart = this.get('chart');
 
     datasets.forEach(function(dataset, i) {
+      chart.datasets[i].label = dataset.label;
+      chart.datasets[i].fillColor = dataset.fillColor;
+      chart.datasets[i].strokeColor = dataset.strokeColor;
+      chart.datasets[i].pointColor = dataset.pointColor;
+      chart.datasets[i].pointStrokeColor = dataset.pointStrokeColor;
+      chart.datasets[i].pointHighlightFill = dataset.pointHighlightFill;
+      chart.datasets[i].pointHighlightStroke = dataset.pointHighlightStroke;
+
       dataset.data.forEach(function(item, j) {
         item = item || 0;
         if (typeof chart.datasets[i] === 'undefined') {

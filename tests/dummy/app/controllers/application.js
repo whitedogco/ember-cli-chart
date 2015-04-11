@@ -28,13 +28,14 @@ export default Ember.Controller.extend({
   }.property('pieValue1', 'pieValue2', 'pieValue3'),
     lineValue1: 65,
   lineValue2: 59,
+  fillColor: "rgba(220,220,220,0.2)",
   lineData: function(){
     return {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [
             {
                 label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
+                fillColor: this.get('fillColor'),
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
@@ -54,7 +55,7 @@ export default Ember.Controller.extend({
             }
         ]
     };
-  }.property('lineValue1', 'lineValue2'),
+  }.property('lineValue1', 'lineValue2', 'fillColor'),
     barData: {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
